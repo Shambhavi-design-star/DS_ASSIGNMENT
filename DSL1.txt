@@ -1,3 +1,48 @@
+A)
+#include <iostream>
+using namespace std;
+/* Write a program to track rainfall data for 3 cities over 4 months. Using a 2D array, we can store the data, calculate the average rainfall for each city, and display the rainfall data in a tabular format.*/
+int main()
+{
+  cout<<"Name:Shambhavi Vaishampayan\n PRN:B24CE1126\n";
+ float rainfall[3][4];
+    float avg = 0;
+    float total = 0;
+    float city_total[3] = {0}; 
+    int c, r;
+    for (c = 0; c < 3; c++)
+    {
+        cout << "Enter rainfall for city " << (c + 1) << " (4 months):\n";
+        for (r = 0; r < 4; r++)
+        {
+            cout << "Month " << (r + 1) << ": ";
+            cin >> rainfall[c][r];
+        }
+    }
+    cout << "\nRainfall data:\n";
+    printf("SNO.\tCity\tM1\tM2\tM3\tM4\tAvg\n");
+    for (c = 0; c < 3; c++)
+    {
+        total = 0;
+        printf("%d\tCity %d\t", c + 1, c + 1);
+        for (r = 0; r < 4; r++)
+        {
+            printf("%.2f\t", rainfall[c][r]);
+            total += rainfall[c][r];
+        }
+        avg = total / 4;
+        city_total[c] = total;  
+        printf("%.2f\n", avg);
+    }
+    cout << "\nTotal:\t\";
+    for (c = 0; c < 3; c++)
+    {
+        printf("City %d: %.2f\t", c + 1, city_total[c]);
+    }
+    cout << endl;
+    return 0;
+}
+B)
 #include <iostream>
 #include <iomanip> // For std::fixed and std::setprecision
 /* Write a program for Tracking daily temperatures of 3 cities for a week . The program calculates the average temperature for each day and for the week.*/
@@ -48,3 +93,4 @@ int main() {
 
     return 0;
 }
+
